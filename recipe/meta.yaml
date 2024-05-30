@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
-  sha256: be4787fa5a5b149364922dfaace0615cb1a6034fed117481fdbf42d791aa7b19
+  sha256: 60c1722f9985675e65f78c05bca8b4eb708a3140a2ed16d8de2c4cc4a4ecadc3
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - flit-core >=3.2,<4
     - pip
   run:
+    - jmespath
     - python >=3.8
     - apache-airflow >=2.9.0
     - flask-appbuilder ==4.4.1
