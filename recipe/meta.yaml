@@ -20,13 +20,13 @@ requirements:
     - flit-core >=3.2,<4
     - pip
   run:
-    - jmespath
     - python >=3.8
     - apache-airflow >=2.9.0
     - flask-appbuilder ==4.4.1
     - flask-login >=0.6.2
     - flask >=2.2,<2.3
     - google-re2 >=1.0
+    - jmespath
 
 test:
   imports:
