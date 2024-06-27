@@ -21,7 +21,8 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - apache-airflow >=2.9.0
+    # temporarly skip to avoid circular dependency
+    # - apache-airflow >=2.9.0
     - flask-appbuilder ==4.5.0
     - flask-login >=0.6.2
     - flask >=2.2,<2.3
@@ -30,9 +31,11 @@ requirements:
 
 test:
   imports:
-    - airflow.providers.fab
+    # temporarly skip because we aren't installing apache-airflow
+    # - airflow.providers.fab
   commands:
-    - pip check
+    # temporarly skip because we aren't installing apache-airflow
+    # - pip check
   requires:
     - pip
 
