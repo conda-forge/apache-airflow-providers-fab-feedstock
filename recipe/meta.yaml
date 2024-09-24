@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
-  sha256: 9e33d80380ce052bb7557d5c22bf4cbd7bc5c22e47f4c747e6a931056bd74d6d
+  sha256: 1607912a64880be1833a3da0b13408b8637eee4d6796068ce216ea499df13135
 
 build:
   noarch: python
