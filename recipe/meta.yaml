@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<4.dev0
+    - python >=3.9,<4.dev0
     - flit-core >=3.2,<4
     - pip
   run:
-    - apache-airflow-providers-common-compat >=1.2.0
-    - python >=3.8
+    - python >=3.9,<4.dev0
     - apache-airflow >=2.9.0
+    - apache-airflow-providers-common-compat >=1.2.0
     - flask-appbuilder ==4.5.0
     - flask-login >=0.6.2
     - flask >=2.2,<2.3
