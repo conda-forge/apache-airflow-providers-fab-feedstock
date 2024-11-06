@@ -23,7 +23,7 @@ requirements:
     - python >=3.9,<4.dev0
     # temporarily remove circular dependency
     # - apache-airflow >=2.9.0
-    - apache-airflow-providers-common-compat >=1.2.1
+    # - apache-airflow-providers-common-compat >=1.2.1
     - flask-appbuilder ==4.5.2
     - flask-login >=0.6.2
     - flask >=2.2,<2.3
