@@ -1,5 +1,6 @@
 {% set name = "apache-airflow-providers-fab" %}
 {% set version = "1.5.0" %}
+{% set python_min = python_min|default("3.9") %}
 
 package:
   name: {{ name|lower }}
@@ -12,18 +13,17 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<4.dev0
+    - python {{ python_min }}.*
     - flit-core ==3.10.0
     - pip
   run:
-    - python >=3.9,<4.dev0
-    # temporarily remove circular dependency
-    # - apache-airflow >=2.9.0
-    # - apache-airflow-providers-common-compat >=1.2.1
+    - python >={{ python_min }}
+    - apache-airflow >=2.9.0
+    - apache-airflow-providers-common-compat >=1.2.1
     - flask-appbuilder ==4.5.2
     - flask-login >=0.6.2
     - flask >=2.2,<2.3
@@ -32,13 +32,12 @@ requirements:
 
 test:
   imports:
-    # temporarily skip tests
-    # - airflow.providers.fab
+    - airflow.providers.fab
   commands:
-    # temporarily skip tests
-    # - pip check
+    - pip check
   requires:
     - pip
+    - python ={{ python_min }}
 
 about:
   home: https://airflow.apache.org/
