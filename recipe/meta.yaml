@@ -1,6 +1,6 @@
 {% set name = "apache-airflow-providers-fab" %}
 {% set version = "1.5.0" %}
-{% set python_min = python_min|default("0.1a0") %}
+{% set python_min = python_min|default("3.9") %}
 
 package:
   name: {{ name|lower }}
