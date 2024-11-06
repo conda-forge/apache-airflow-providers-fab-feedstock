@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
   sha256: 4cb1794faa82cba60c9809b8cd9b52f730ec282c9e694cc83ea4dd77392b93e9
 
 build:
@@ -17,7 +17,7 @@ build:
 requirements:
   host:
     - python >=3.9,<4.dev0
-    - flit-core >=3.2,<4
+    - flit-core ==3.10.0
     - pip
   run:
     - python >=3.9,<4.dev0
