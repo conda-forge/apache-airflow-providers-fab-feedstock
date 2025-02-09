@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -22,9 +22,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    # temporarly skip to avoid circular dependency
-    # - apache-airflow >=2.9.0
-    # - apache-airflow-providers-common-compat >=1.2.1
+    - apache-airflow >=2.9.0
+    - apache-airflow-providers-common-compat >=1.2.1
     - flask-appbuilder ==4.5.3
     - flask-login >=0.6.2
     - flask >=2.2,<2.3
@@ -33,11 +32,9 @@ requirements:
 
 test:
   imports:
-    # temporarly skip to avoid circular dependency
-    # - airflow.providers.fab
+    - airflow.providers.fab
   commands:
-    # temporarly skip to avoid circular dependency
-    # - pip check
+    - pip check
   requires:
     - python {{ python_min }}
     - pip
