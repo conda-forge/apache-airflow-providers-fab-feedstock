@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
-{% set version = "1.5.3" %}
+{% set version = "2.0.2" %}
 {% set python_min = python_min|default("3.9") %}
 
 package:
@@ -8,27 +8,32 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
-  sha256: bb4d879fb9bf9bca7c0f103e1dc9d1fa25efe02e2c4536f4d60c789786fb1f89
+  sha256: 220b696f9728ed7a7be905da90b878672916cd6e3f7432f24abf37a029113a2d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core ==3.10.1
+    - flit-core ==3.12.0
     - pip
   run:
     - python >={{ python_min }}
-    - apache-airflow >=2.9.0
+    - apache-airflow >=3.0.0
     - apache-airflow-providers-common-compat >=1.2.1
+    - blinker >=1.6.2
+    - flask >=2.2.1,<2.3
     - flask-appbuilder ==4.5.3
     - flask-login >=0.6.2
-    - flask >=2.2,<2.3
-    - google-re2 >=1.0
+    - flask-session >=0.4.0,<0.6
+    - flask-wtf >=1.1.0
+    - connexion >=2.14.2,<3.0
     - jmespath >=0.7.0
+    - werkzeug >=2.2,<4
+    - wtforms >=3.0,<4
 
 test:
   imports:
@@ -42,9 +47,10 @@ test:
 about:
   home: https://airflow.apache.org/
   summary: Provider package apache-airflow-providers-fab for Apache Airflow
-  license: Apache-2.0
-  license_family: Apache
-  license_file: airflow/providers/fab/LICENSE
+  license: MIT AND Apache-2.0
+  license_file:
+    - src/airflow/providers/3rd-party-licenses/LICENSES-ui.txt
+    - src/airflow/providers/fab/LICENSE
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-fab/stable/index.html
   dev_url: https://github.com/apache/airflow/
 
