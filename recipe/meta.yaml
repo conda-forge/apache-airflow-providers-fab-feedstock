@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
-{% set version = "2.0.2" %}
+{% set version = "2.2.0" %}
 {% set python_min = python_min|default("3.9") %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
-  sha256: 220b696f9728ed7a7be905da90b878672916cd6e3f7432f24abf37a029113a2d
+  sha256: e7d78d1c23f058673c4e2c4871488f55a92f4388166b952ff97a5ebee5cada97
 
 build:
   noarch: python
@@ -22,11 +22,11 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - apache-airflow >=3.0.0
+    - apache-airflow >=3.0.2
     - apache-airflow-providers-common-compat >=1.2.1
     - blinker >=1.6.2
     - flask >=2.2.1,<2.3
-    - flask-appbuilder ==4.5.3
+    - flask-appbuilder ==4.6.3
     - flask-login >=0.6.2
     - flask-session >=0.4.0,<0.6
     - flask-wtf >=1.1.0
