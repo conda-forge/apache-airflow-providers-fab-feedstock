@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
-{% set version = "2.2.0" %}
-{% set python_min = python_min|default("3.9") %}
+{% set version = "2.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
-  sha256: e7d78d1c23f058673c4e2c4871488f55a92f4388166b952ff97a5ebee5cada97
+  sha256: 81085da9ebd25b07479691a0fb7ddb70f02699c78d82f2d24c2b68994e4abfb3
 
 build:
   noarch: python
@@ -47,7 +46,7 @@ test:
 about:
   home: https://airflow.apache.org/
   summary: Provider package apache-airflow-providers-fab for Apache Airflow
-  license: MIT AND Apache-2.0
+  license: Apache-2.0 AND MIT
   license_file:
     - src/airflow/providers/3rd-party-licenses/LICENSES-ui.txt
     - src/airflow/providers/fab/LICENSE
