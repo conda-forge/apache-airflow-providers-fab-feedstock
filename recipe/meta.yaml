@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
 {% set version = "2.2.1" %}
-{% set python_min = python_min|default("3.9") %}
 
 package:
   name: {{ name|lower }}
@@ -47,7 +46,7 @@ test:
 about:
   home: https://airflow.apache.org/
   summary: Provider package apache-airflow-providers-fab for Apache Airflow
-  license: MIT AND Apache-2.0
+  license: Apache-2.0 AND MIT
   license_file:
     - src/airflow/providers/3rd-party-licenses/LICENSES-ui.txt
     - src/airflow/providers/fab/LICENSE
