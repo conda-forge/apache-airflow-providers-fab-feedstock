@@ -21,7 +21,6 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
-    - flask-limiter >3,<4,!=3.13
     - python >={{ python_min }},<3.13
     - apache-airflow >=3.0.2
     - apache-airflow-providers-common-compat >=1.2.1
@@ -35,6 +34,7 @@ requirements:
     - jmespath >=0.7.0
     - werkzeug >=2.2,<4
     - wtforms >=3.0,<4
+    - flask-limiter >3,<4,!=3.13
 
 test:
   imports:
