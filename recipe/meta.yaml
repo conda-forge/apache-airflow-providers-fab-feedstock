@@ -26,7 +26,7 @@ requirements:
     # more restrictive for python <3.13
     - blinker >=1.6.2
     # more restrictive for python <3.13
-    - flask >=2.2.1
+    - flask >=2.2.1,<2.3
     - flask-appbuilder ==5.0.1
     # more restrictive for python <3.13
     - flask-login >=0.6.2
@@ -37,17 +37,17 @@ requirements:
     # more restrictive for python <3.13
     - flask-sqlalchemy >=3.0.5
     # more restrictive for python <3.13
-    - sqlalchemy >=1.4.36
+    - sqlalchemy >=1.4.36,<2
     # more restrictive for python <3.13
     - flask-wtf >=1.1.0
     # more restrictive for python <3.13
-    - connexion >=2.14.2
+    - connexion >=2.14.2,<3.0
     # more restrictive for python <3.13
     - jmespath >=0.7.0
     # more restrictive for python <3.13
-    - werkzeug >=2.2
+    - werkzeug >=2.2,<4
     # more restrictive for python <3.13
-    - wtforms >=3.0
+    - wtforms >=3.0,<4
     - flask_limiter >3,<4,!=3.13
 
 test:
