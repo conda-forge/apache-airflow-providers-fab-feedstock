@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
 {% set version = "3.0.3" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -21,24 +20,35 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
-    - flask-sqlalchemy >=3.0.5
-    - flask_limiter >3,<4,!=3.13
-    - msgpack-python >=1.0.0
-    - sqlalchemy >=1.4.36,<2
     - python >={{ python_min }},<3.13
     - apache-airflow >=3.0.2
     - apache-airflow-providers-common-compat >=1.8.0
+    # more restrictive for python <3.13
     - blinker >=1.6.2
+    # more restrictive for python <3.13
     - flask >=2.2.1,<2.3
     - flask-appbuilder ==5.0.1
+    # more restrictive for python <3.13
     - flask-login >=0.6.2
+    # more restrictive for python <3.13
     - flask-session >=0.8.0
+    # more restrictive for python <3.13
+    - msgpack >=1.0.0
+    # more restrictive for python <3.13
+    - flask-sqlalchemy >=3.0.5
+    # more restrictive for python <3.13
+    - sqlalchemy >=1.4.36,<2
+    # more restrictive for python <3.13
     - flask-wtf >=1.1.0
+    # more restrictive for python <3.13
     - connexion >=2.14.2,<3.0
+    # more restrictive for python <3.13
     - jmespath >=0.7.0
+    # more restrictive for python <3.13
     - werkzeug >=2.2,<4
+    # more restrictive for python <3.13
     - wtforms >=3.0,<4
-    - flask-limiter >3,<4,!=3.13
+    - flask_limiter >3,<4,!=3.13
 
 test:
   imports:
@@ -50,12 +60,13 @@ test:
     - pip
 
 about:
-  home: https://airflow.apache.org/
+  home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-fab for Apache Airflow
-  license: Apache-2.0 AND MIT
+  license: Apache-2.0
   license_file:
-    - src/airflow/providers/3rd-party-licenses/LICENSES-ui.txt
-    - src/airflow/providers/fab/LICENSE
+    - LICENSE
+    - NOTICE
+  license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-fab/stable/index.html
   dev_url: https://github.com/apache/airflow/
 
