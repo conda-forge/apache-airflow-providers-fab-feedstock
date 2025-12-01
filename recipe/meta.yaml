@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-fab" %}
-{% set version = "2.4.4" %}
+{% set version = "3.0.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
-  sha256: b16df0ba1ff0f02171e350ccf0e15c3a9f2d746be9a47d0d70efeb43f233ced9
+  sha256: c17a8cb80c32c498a5feaa004d0bd3e8614ef6358abaa664b06e3a745e4507ce
 
 build:
   noarch: python
@@ -21,14 +21,18 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
+    - flask-sqlalchemy >=3.0.5
+    - flask_limiter >3,<4,!=3.13
+    - msgpack-python >=1.0.0
+    - sqlalchemy >=1.4.36,<2
     - python >={{ python_min }},<3.13
     - apache-airflow >=3.0.2
-    - apache-airflow-providers-common-compat >=1.2.1
+    - apache-airflow-providers-common-compat >=1.8.0
     - blinker >=1.6.2
     - flask >=2.2.1,<2.3
-    - flask-appbuilder ==4.6.3
+    - flask-appbuilder ==5.0.1
     - flask-login >=0.6.2
-    - flask-session >=0.4.0,<0.6
+    - flask-session >=0.8.0
     - flask-wtf >=1.1.0
     - connexion >=2.14.2,<3.0
     - jmespath >=0.7.0
