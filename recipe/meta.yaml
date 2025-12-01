@@ -33,7 +33,7 @@ requirements:
     # more restrictive for python <3.13
     - flask-session >=0.8.0
     # more restrictive for python <3.13
-    - msgpack >=1.0.0
+    - msgpack-python >=1.0.0
     # more restrictive for python <3.13
     - flask-sqlalchemy >=3.0.5
     # more restrictive for python <3.13
