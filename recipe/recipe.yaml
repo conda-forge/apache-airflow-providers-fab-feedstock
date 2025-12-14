@@ -1,28 +1,29 @@
-{% set name = "apache-airflow-providers-fab" %}
-{% set version = "3.0.3" %}
+context:
+  name: apache-airflow-providers-fab
+  version: "3.1.0"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_fab-{{ version }}.tar.gz
-  sha256: c17a8cb80c32c498a5feaa004d0bd3e8614ef6358abaa664b06e3a745e4507ce
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
+  sha256: 2a761062859d86d47557e17c2964c8fefc3034c950612c8cfe1795ccf6a08f42
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: python -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
-    - flit-core ==3.12.0
+    - python ${{ python_min }}.*
     - pip
+    - flit-core ==3.12.0
   run:
-    - python >={{ python_min }},<3.13
+    - python >=${{ python_min }}
     - apache-airflow >=3.0.2
-    - apache-airflow-providers-common-compat >=1.8.0
+    - apache-airflow-providers-common-compat >=1.10.1
     # more restrictive for python <3.13
     - blinker >=1.6.2
     # more restrictive for python <3.13
@@ -50,25 +51,22 @@ requirements:
     - wtforms >=3.0,<4
     - flask-limiter >3,<4,!=3.13
 
-test:
-  imports:
-    - airflow.providers.fab
-  commands:
-    - pip check
-  requires:
-    - python {{ python_min }}
-    - pip
+tests:
+  - python:
+      imports:
+      - airflow.providers.fab
+      pip_check: true
+      python_version: ${{ python_min }}.*
 
 about:
-  home: https://github.com/apache/airflow/
+  homepage: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-fab for Apache Airflow
   license: Apache-2.0
   license_file:
     - LICENSE
     - NOTICE
-  license_family: Apache
-  doc_url: https://airflow.apache.org/docs/apache-airflow-providers-fab/stable/index.html
-  dev_url: https://github.com/apache/airflow/
+  documentation: https://airflow.apache.org/docs/apache-airflow-providers-fab/stable/index.html
+  repository: https://github.com/apache/airflow/
 
 extra:
   recipe-maintainers:
