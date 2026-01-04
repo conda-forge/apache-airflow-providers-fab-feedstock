@@ -54,7 +54,7 @@ requirements:
 tests:
   - python:
       imports:
-        - airflow.providers.fab
+      - airflow.providers.fab
       pip_check: true
       python_version: ${{ python_min }}.*
 
