@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: "3.1.1"
+  version: "3.1.2"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
-  sha256: b3ff140581a4e8ade27310e17aae624964c3aa3f7c9eb4915224290d6c62c874
+  sha256: 224d6306c5e15d647796e00b1d45263d8e3f0adf2ee343b4a095f64aaa98ce9d
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - apache-airflow >=3.0.2
-    - apache-airflow-providers-common-compat >=1.10.1
+    - apache-airflow-providers-common-compat >=1.12.0
     # more restrictive for python <3.13
     - blinker >=1.6.2
     # more restrictive for python <3.13
@@ -37,8 +37,6 @@ requirements:
     - msgpack-python >=1.0.0
     # more restrictive for python <3.13
     - flask-sqlalchemy >=3.0.5
-    # more restrictive for python <3.13
-    - sqlalchemy >=1.4.36,<2
     # more restrictive for python <3.13
     - flask-wtf >=1.1.0
     # more restrictive for python <3.13
