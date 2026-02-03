@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: "3.2.0"
+  version: 3.2.0
 
 package:
   name: ${{ name|lower }}
@@ -47,8 +47,9 @@ requirements:
     - werkzeug >=2.2,<4
     # more restrictive for python <3.13
     - wtforms >=3.0,<4
+    # more restrictive for python <3.13
+    - cachetools >=6.0
     - flask-limiter >3,<4,!=3.13
-
 tests:
   - python:
       imports:
