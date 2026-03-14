@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: "3.4.0"
+  version: "3.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
-  sha256: 4b376aa0ed01c3d1ed1008bce8d5afee1ff32f4a087905f1bed75097eb14fda7
+  sha256: 4bfa706c50108e59e810af5defac5b48e3c6dc22f8555360247fcacf36f7518a
 
 build:
   noarch: python
@@ -19,43 +19,28 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - gitpython ==3.1.45
-    - gitdb ==4.0.12
-    - hatchling ==1.27.0
-    - packaging ==25.0
-    - pathspec ==0.12.1
+    - hatchling ==1.29.0
+    - packaging ==26.0
+    - pathspec ==1.0.4
     - pluggy ==1.6.0
-    - smmap ==5.0.2
-    - tomli ==2.2.1
-    - trove-classifiers ==2025.9.11.17
+    # for all python to stay noarch: python
+    - tomli ==2.4.0
+    - trove-classifiers ==2026.1.14.14
   run:
     - python >=${{ python_min }}
     - apache-airflow >=3.0.2
     - apache-airflow-providers-common-compat >=1.12.0
-    # more restrictive for python <3.13
     - blinker >=1.6.2
-    # more restrictive for python <3.13
     - flask >=2.2.1,<2.3
-    - flask-appbuilder ==5.0.1
-    # more restrictive for python <3.13
+    - flask-appbuilder ==5.2.0
     - flask-login >=0.6.2
-    # more restrictive for python <3.13
     - flask-session >=0.8.0
-    # more restrictive for python <3.13
     - msgpack-python >=1.0.0
-    # more restrictive for python <3.13
     - flask-sqlalchemy >=3.0.5
-    # more restrictive for python <3.13
     - flask-wtf >=1.1.0
-    # more restrictive for python <3.13
-    - connexion >=2.14.2,<3.0
-    # more restrictive for python <3.13
     - jmespath >=0.7.0
-    # more restrictive for python <3.13
     - werkzeug >=2.2,<4
-    # more restrictive for python <3.13
     - wtforms >=3.0,<4
-    # more restrictive for python <3.13
     - cachetools >=6.0
     - flask-limiter >3,<4,!=3.13
 
