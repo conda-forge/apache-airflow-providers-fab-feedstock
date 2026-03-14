@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: 3.5.0
+  version: "3.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -19,15 +19,13 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - gitpython ==3.1.45
-    - gitdb ==4.0.12
-    - hatchling ==1.27.0
-    - packaging ==25.0
-    - pathspec ==0.12.1
+    - hatchling ==1.29.0
+    - packaging ==26.0
+    - pathspec ==1.0.4
     - pluggy ==1.6.0
-    - smmap ==5.0.2
-    - tomli ==2.2.1
-    - trove-classifiers ==2025.9.11.17
+    # for all python to stay noarch: python
+    - tomli ==2.4.0
+    - trove-classifiers ==2026.1.14.14
   run:
     - python >=${{ python_min }}
     - apache-airflow >=3.0.2
@@ -45,6 +43,7 @@ requirements:
     - wtforms >=3.0,<4
     - cachetools >=6.0
     - flask-limiter >3,<4,!=3.13
+
 tests:
   - python:
       imports:
