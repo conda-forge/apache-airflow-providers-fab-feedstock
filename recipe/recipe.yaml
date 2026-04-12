@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: "3.4.0"
+  version: 3.6.1
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
-  sha256: 4b376aa0ed01c3d1ed1008bce8d5afee1ff32f4a087905f1bed75097eb14fda7
+  sha256: 3e06969666bce279e3b28e5a48dc2004d7acc64ce769a58303ff5941a324c9f0
 
 build:
   noarch: python
@@ -32,33 +32,20 @@ requirements:
     - python >=${{ python_min }}
     - apache-airflow >=3.0.2
     - apache-airflow-providers-common-compat >=1.12.0
-    # more restrictive for python <3.13
     - blinker >=1.6.2
-    # more restrictive for python <3.13
-    - flask >=2.2.1,<2.3
-    - flask-appbuilder ==5.0.1
-    # more restrictive for python <3.13
+    - flask >=2.2.1
+    - flask-appbuilder ==5.2.0
     - flask-login >=0.6.2
-    # more restrictive for python <3.13
     - flask-session >=0.8.0
-    # more restrictive for python <3.13
     - msgpack-python >=1.0.0
-    # more restrictive for python <3.13
     - flask-sqlalchemy >=3.0.5
-    # more restrictive for python <3.13
     - flask-wtf >=1.1.0
-    # more restrictive for python <3.13
-    - connexion >=2.14.2,<3.0
-    # more restrictive for python <3.13
     - jmespath >=0.7.0
-    # more restrictive for python <3.13
-    - werkzeug >=2.2,<4
-    # more restrictive for python <3.13
-    - wtforms >=3.0,<4
-    # more restrictive for python <3.13
+    - werkzeug >=2.2
+    - wtforms >=3.0
     - cachetools >=6.0
-    - flask-limiter >3,<4,!=3.13
-
+    - flask-limiter >3,!=3.13
+    - marshmallow >=3
 tests:
   - python:
       imports:
