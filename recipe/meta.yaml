@@ -26,6 +26,7 @@ requirements:
     - apache-airflow-providers-common-compat >=1.2.1
     - flask-appbuilder ==4.5.4
     - flask-login >=0.6.3
+    - flask-session >=0.8.0
     - flask >=2.2,<3
     - google-re2 >=1.0
     - jmespath >=0.7.0
