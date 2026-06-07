@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: "3.6.4"
+  version: "3.6.5"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
-  sha256: 9929465a448726fb38aff47344529f36c10ddc41efb0187ad223ad66cc19afb3
+  sha256: bf2a014bd9b312a9f3a3498c973fa95d2d5de40d670f51b24f97400468032775
 
 build:
   noarch: python
@@ -25,7 +25,7 @@ requirements:
     - pluggy ==1.6.0
     # for all python to stay noarch: python
     - tomli ==2.4.1
-    - trove-classifiers ==2026.5.7.17
+    - trove-classifiers ==2026.5.22.10
   run:
     - python >=${{ python_min }}
     - apache-airflow >=3.0.2
@@ -47,7 +47,7 @@ requirements:
     - wtforms >=3.0
     - cachetools >=6.0
     - marshmallow >=3
-    - flask-limiter >3,!=3.13
+    - flask-limiter >3
 
 tests:
   - python:
