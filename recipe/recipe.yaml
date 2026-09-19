@@ -23,8 +23,6 @@ requirements:
     - packaging ==26.3
     - pathspec ==1.1.1
     - pluggy ==1.6.0
-    # tightest of upstream's floors (python <3.11)
-    - tomli ==2.4.1
     - tomlkit ==0.15.1
     - trove-classifiers ==2026.6.1.19
   run:
@@ -35,13 +33,16 @@ requirements:
     - flask >=2.2.1
     - flask-appbuilder ==5.2.2
     - pyjwt >=2.11.0
-    - flask-login >=0.6.2
+    # tightest of upstream's floors (python >=3.14)
+    - flask-login >=0.6.3
     - flask-session >=0.8.0
     - msgpack-python >=1.0.0
     - flask-sqlalchemy >=3.0.5
-    - flask-wtf >=1.1.0
+    # tightest of upstream's floors (python >=3.14)
+    - flask-wtf >=1.2.2
     - jmespath >=0.7.0
-    - werkzeug >=2.2
+    # tightest of upstream's floors (python >=3.14)
+    - werkzeug >=3.1.6
     - wtforms >=3.0
     - cachetools >=6.0
     - marshmallow >=3
