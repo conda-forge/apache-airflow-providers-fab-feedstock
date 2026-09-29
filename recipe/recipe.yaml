@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: 3.9.0
+  version: 3.10.0
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
-  sha256: 0bdb1b21353b7df89ab5fa3d81da7969dc99b1a03d546fc2dc7035756bfab631
+  sha256: 9ef6158e9f1a57c6974cc4f377b99193e7bef2ba3d5fab8f079c5f520e4f5cd7
 
 build:
   noarch: python
@@ -28,21 +28,18 @@ requirements:
   run:
     - python >=${{ python_min }}
     - apache-airflow >=3.0.2
-    - apache-airflow-providers-common-compat >=1.18.0
+    - apache-airflow-providers-common-compat >=1.20.0
     - blinker >=1.6.2
     - flask >=2.2.1
     - flask-appbuilder ==5.2.2
     - pyjwt >=2.11.0
-    # tightest of upstream's floors (python >=3.14)
-    - flask-login >=0.6.3
+    - flask-login >=0.6.2
     - flask-session >=0.8.0
     - msgpack-python >=1.0.0
     - flask-sqlalchemy >=3.0.5
-    # tightest of upstream's floors (python >=3.14)
-    - flask-wtf >=1.2.2
+    - flask-wtf >=1.1.0
     - jmespath >=0.7.0
-    # tightest of upstream's floors (python >=3.14)
-    - werkzeug >=3.1.6
+    - werkzeug >=2.2
     - wtforms >=3.0
     - cachetools >=6.0
     - marshmallow >=3
