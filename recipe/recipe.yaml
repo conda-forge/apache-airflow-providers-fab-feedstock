@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: 3.10.0
+  version: 3.10.1
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
-  sha256: 9ef6158e9f1a57c6974cc4f377b99193e7bef2ba3d5fab8f079c5f520e4f5cd7
+  sha256: d3dcbb5bf20598a61c2934cb9cb2004bac33ad155f0053f5cc2e392cdc75f092
 
 build:
   noarch: python
@@ -19,12 +19,12 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - hatchling ==1.32.0
+    - hatchling ==1.32.4
     - packaging ==26.3
     - pathspec ==1.1.1
     - pluggy ==1.6.0
     - tomlkit ==0.15.1
-    - trove-classifiers ==2026.6.1.19
+    - trove-classifiers ==2026.9.21.13
   run:
     - python >=${{ python_min }}
     - apache-airflow >=3.0.2
