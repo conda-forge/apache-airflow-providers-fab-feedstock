@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-fab
-  version: "3.11.0"
+  version: "3.11.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_fab-${{ version }}.tar.gz
-  sha256: 43ea96d20d2311be502fea4a1598d8c7815629a07929a1ced3be86e28ce07295
+  sha256: 23889338bb3eba4e0fbed504bcd9c6e2227650e433d1dea68f02fb45638c161d
 
 build:
   noarch: python
